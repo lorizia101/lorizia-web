@@ -116,14 +116,45 @@
   --sidebar-ring: oklch(0.556 0 0);
 }
 
+/* ── Lorizia brand tokens ── */
+:root {
+  --lorizia-navy:   #1b3a5c;
+  --lorizia-navy2:  #122840;
+  --lorizia-orange: #e8460a;
+  --lorizia-yellow: #f5c842;
+  --lorizia-light:  #f4f7fb;
+  --lorizia-border: #dde4ed;
+  --lorizia-gray:   #64748b;
+
+  /* aurora CSS vars */
+  --white: #ffffff;
+  --black: #000000;
+  --transparent: transparent;
+}
+
+/* ── Aurora animation ── */
+@theme inline {
+  --animate-aurora: aurora 60s linear infinite;
+}
+
+@keyframes aurora {
+  from { background-position: 50% 50%, 50% 50%; }
+  to   { background-position: 350% 50%, 350% 50%; }
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
   body {
     @apply bg-background text-foreground;
+    font-family: var(--font-inter), 'Segoe UI', Arial, sans-serif;
   }
   html {
     @apply font-sans;
+    scroll-behavior: smooth;
+  }
+  h1, h2, h3 {
+    font-family: var(--font-playfair), Georgia, serif;
   }
 }
