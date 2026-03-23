@@ -6,6 +6,7 @@ import Image from "next/image";
 import { AuroraBackground } from "@/components/ui/aurora-background";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
+import { SocialLinks } from "@/components/social-links";
 import {
   Target,
   Link2,
@@ -428,6 +429,9 @@ export default function Home() {
             >
               Learn More About Us
             </Link>
+          </div>
+          <div className="mt-10 flex justify-center">
+            <SocialLinks theme="dark" label="Follow Us" />
           </div>
         </div>
       </section>
