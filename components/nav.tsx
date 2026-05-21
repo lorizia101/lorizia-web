@@ -16,11 +16,10 @@ export function Nav() {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="sticky top-0 z-50 bg-white border-b border-[#dde4ed]">
-      <div className="max-w-[1100px] mx-auto px-6 flex items-center justify-between h-[68px]">
-        {/* Logo */}
+    <nav className="sticky top-0 z-50 border-b border-[#dfd7ca] bg-[#fbfaf7]/90 backdrop-blur">
+      <div className="lorizia-shell flex h-[76px] items-center justify-between">
         <Link href="/" className="flex items-center gap-2 shrink-0">
-          <div className="bg-[#0f2236] rounded-lg px-3 py-1.5">
+          <div className="rounded-2xl border border-[#203447]/12 bg-[#173047] px-3 py-2 shadow-sm">
             <Image
               src="/lorizia-logo.png"
               alt="Lorizia LLC"
@@ -32,7 +31,6 @@ export function Nav() {
           </div>
         </Link>
 
-        {/* Desktop links */}
         <ul className="hidden md:flex items-center gap-8 list-none">
           {links.map((l) => (
             <li key={l.href}>
@@ -40,8 +38,8 @@ export function Nav() {
                 href={l.href}
                 className={`text-[15px] font-medium transition-colors ${
                   pathname === l.href
-                    ? "text-[#1b3a5c] font-semibold"
-                    : "text-[#64748b] hover:text-[#1b3a5c]"
+                    ? "text-[#173047] font-semibold"
+                    : "text-[#5f6d72] hover:text-[#173047]"
                 }`}
               >
                 {l.label}
@@ -51,16 +49,15 @@ export function Nav() {
           <li>
             <Link
               href="/contact"
-              className="bg-[#e8460a] hover:bg-[#c73a08] text-white px-5 py-2.5 rounded-md text-[15px] font-semibold transition-colors"
+              className="rounded-full bg-[#b85b20] px-5 py-2.5 text-[15px] font-semibold text-white transition-colors hover:bg-[#9f4d18]"
             >
-              Work With Us
+              Partner With Lorizia
             </Link>
           </li>
         </ul>
 
-        {/* Mobile toggle */}
         <button
-          className="md:hidden p-2 rounded-md border border-[#dde4ed] text-[#1b3a5c]"
+          className="rounded-xl border border-[#dfd7ca] bg-white p-2 text-[#173047] md:hidden"
           onClick={() => setOpen(!open)}
           aria-label="Toggle menu"
         >
@@ -68,15 +65,14 @@ export function Nav() {
         </button>
       </div>
 
-      {/* Mobile menu */}
       {open && (
-        <div className="md:hidden border-t border-[#dde4ed] bg-white">
+        <div className="border-t border-[#dfd7ca] bg-[#fbfaf7] md:hidden">
           {links.map((l) => (
             <Link
               key={l.href}
               href={l.href}
               onClick={() => setOpen(false)}
-              className="block px-6 py-3.5 text-[15px] font-medium text-[#1b3a5c] border-b border-[#dde4ed] hover:bg-[#f4f7fb]"
+              className="block border-b border-[#e7e0d6] px-6 py-3.5 text-[15px] font-medium text-[#173047] hover:bg-white"
             >
               {l.label}
             </Link>
@@ -84,9 +80,9 @@ export function Nav() {
           <Link
             href="/contact"
             onClick={() => setOpen(false)}
-            className="block px-6 py-3.5 text-[15px] font-semibold text-[#e8460a] hover:bg-[#f4f7fb]"
+            className="block px-6 py-3.5 text-[15px] font-semibold text-[#b85b20] hover:bg-white"
           >
-            Work With Us →
+            Partner With Lorizia
           </Link>
         </div>
       )}

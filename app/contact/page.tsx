@@ -1,13 +1,10 @@
 "use client";
 
 import { useState } from "react";
+import { Mail, MapPin, Phone, ShieldCheck } from "lucide-react";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
-import { Mail, Phone, MapPin, Clock, CheckCircle } from "lucide-react";
 
-// ─── Formspree setup ────────────────────────────────────────────────────────
-// 1. Go to https://formspree.io → sign up free → New Form → copy your Form ID
-// 2. Replace the placeholder below with your actual Form ID (looks like: xpwzabcd)
 const FORMSPREE_FORM_ID = "mnjgyzaz";
 
 export default function Contact() {
@@ -18,12 +15,14 @@ export default function Contact() {
     setStatus("submitting");
     const form = e.currentTarget;
     const data = new FormData(form);
+
     try {
       const res = await fetch(`https://formspree.io/f/${FORMSPREE_FORM_ID}`, {
         method: "POST",
         body: data,
         headers: { Accept: "application/json" },
       });
+
       if (res.ok) {
         setStatus("success");
         form.reset();
@@ -36,230 +35,155 @@ export default function Contact() {
   }
 
   return (
-    <div className="flex flex-col flex-1">
+    <div className="flex flex-1 flex-col">
       <Nav />
+      <main className="px-6 py-12 md:py-18">
+        <div className="lorizia-shell grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
+          <div className="rounded-[30px] bg-[#173047] p-8 text-white md:p-10">
+            <span className="text-[12px] font-bold uppercase tracking-[0.24em] text-[#f2b161]">
+              Contact
+            </span>
+            <h1 className="mt-4 text-5xl font-semibold leading-[0.96] md:text-6xl">
+              If the opportunity is serious, send the details.
+            </h1>
+            <p className="mt-6 text-[17px] leading-8 text-[#d2dde5]">
+              The clearest starting point is a direct explanation of the offer,
+              program, or partnership lane you want evaluated.
+            </p>
 
-      {/* Hero */}
-      <div
-        className="py-20 px-6 text-white"
-        style={{ background: "linear-gradient(135deg, #122840 0%, #1b3a5c 100%)" }}
-      >
-        <div className="max-w-[1100px] mx-auto">
-          <span className="text-[12px] font-bold uppercase tracking-widest text-orange-300">
-            Get In Touch
-          </span>
-          <h1
-            className="text-4xl md:text-5xl font-bold mt-3 mb-4 leading-tight"
-            style={{ fontFamily: "var(--font-playfair), Georgia, serif" }}
-          >
-            Let&apos;s Talk About{" "}
-            <span className="text-[#f5c842]">Working Together</span>
-          </h1>
-          <p className="text-[17px] text-blue-200 max-w-xl">
-            Whether you have an offer to promote, a SaaS program looking for a
-            paid traffic affiliate, or a question about how we operate — reach
-            out directly.
-          </p>
-        </div>
-      </div>
-
-      {/* Contact body */}
-      <section className="py-20 px-6 bg-white flex-1">
-        <div className="max-w-[1100px] mx-auto grid grid-cols-1 lg:grid-cols-[1fr_1.4fr] gap-16 items-start">
-          {/* Left — info */}
-          <div>
-            <h3
-              className="text-[22px] font-bold text-[#1b3a5c] mb-6"
-              style={{ fontFamily: "var(--font-playfair), Georgia, serif" }}
-            >
-              Contact Information
-            </h3>
-            <div className="space-y-5 mb-10">
-              {[
-                { Icon: Mail, label: "Email", value: "info@loriziallc.com", href: "mailto:info@loriziallc.com" },
-                { Icon: Phone, label: "Phone", value: "346-341-5848", href: "tel:+13463415848" },
-                { Icon: MapPin, label: "Location", value: "Houston, Texas, USA", href: null },
-                { Icon: Clock, label: "Response Time", value: "Within 1 business day", href: null },
-              ].map(({ Icon, label, value, href }) => (
-                <div key={label} className="flex gap-4 items-start">
-                  <div className="w-11 h-11 bg-[#f4f7fb] border border-[#dde4ed] rounded-xl flex items-center justify-center shrink-0">
-                    <Icon className="w-5 h-5 text-[#1b3a5c]" />
-                  </div>
-                  <div>
-                    <span className="block text-[11px] font-bold text-[#64748b] uppercase tracking-widest mb-1">
-                      {label}
-                    </span>
-                    {href ? (
-                      <a
-                        href={href}
-                        className="text-[15px] font-semibold text-[#1b3a5c] hover:text-[#e8460a] transition-colors"
-                      >
-                        {value}
-                      </a>
-                    ) : (
-                      <span className="text-[15px] font-semibold text-[#1b3a5c]">
-                        {value}
-                      </span>
-                    )}
-                  </div>
-                </div>
-              ))}
+            <div className="mt-8 space-y-4 text-[15px] leading-7 text-[#e7eef3]">
+              <div className="flex gap-3">
+                <Mail className="mt-1 h-4 w-4 shrink-0 text-[#f2b161]" />
+                <span>info@loriziallc.com</span>
+              </div>
+              <div className="flex gap-3">
+                <Phone className="mt-1 h-4 w-4 shrink-0 text-[#f2b161]" />
+                <span>346-341-5848</span>
+              </div>
+              <div className="flex gap-3">
+                <MapPin className="mt-1 h-4 w-4 shrink-0 text-[#f2b161]" />
+                <span>Houston, Texas, USA</span>
+              </div>
             </div>
 
-            {/* What to include */}
-            <div className="space-y-4">
-              {[
-                {
-                  title: "For Offer Owners",
-                  items: ["Offer name and ClickBank marketplace link", "Current EPC and gravity score", "Average commission amount", "Confirmation Google Ads traffic is permitted"],
-                },
-                {
-                  title: "For SaaS Programs",
-                  items: ["Program name and PartnerStack link", "Commission structure (recurring or one-time)", "Free trial or demo availability", "Target audience and use case"],
-                },
-              ].map((g) => (
-                <div key={g.title} className="bg-[#f4f7fb] rounded-xl p-5">
-                  <h4 className="text-[13px] font-bold text-[#1b3a5c] uppercase tracking-wider mb-3">
-                    {g.title}
-                  </h4>
-                  <ul className="space-y-2">
-                    {g.items.map((item) => (
-                      <li key={item} className="flex gap-2 text-[13px] text-[#344155]">
-                        <span className="text-[#e8460a] font-bold shrink-0">→</span>
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
+            <div className="mt-8 rounded-[24px] border border-white/10 bg-white/6 p-6">
+              <div className="flex gap-3">
+                <ShieldCheck className="mt-1 h-5 w-5 shrink-0 text-[#f2b161]" />
+                <p className="text-[14px] leading-7 text-[#d6e1e8]">
+                  Best inquiries include the live URL, payout structure,
+                  attribution notes, and anything about traffic restrictions or
+                  partner requirements.
+                </p>
+              </div>
             </div>
           </div>
 
-          {/* Right — form */}
-          <div className="bg-white border border-[#dde4ed] rounded-2xl p-10 shadow-sm">
-            <h3
-              className="text-[22px] font-bold text-[#1b3a5c] mb-7"
-              style={{ fontFamily: "var(--font-playfair), Georgia, serif" }}
-            >
-              Send Us a Message
-            </h3>
+          <div className="lorizia-panel p-8 md:p-10">
+            <span className="lorizia-kicker">Partnership form</span>
+            <h2 className="mt-4 text-4xl font-semibold text-[#173047] md:text-5xl">
+              Send the commercial details, not the polished pitch.
+            </h2>
+            <p className="mt-4 max-w-2xl text-[16px] leading-8 text-[#59686e]">
+              The faster we can understand the offer, economics, and buyer path,
+              the faster we can judge whether the lane is worth testing.
+            </p>
 
             {status === "success" ? (
-              <div className="flex flex-col items-center justify-center py-16 gap-4 text-center">
-                <CheckCircle className="w-14 h-14 text-green-500" />
-                <h4 className="text-[20px] font-bold text-[#1b3a5c]">Message Sent</h4>
-                <p className="text-[14px] text-[#64748b] max-w-xs">
-                  Thanks for reaching out. We&apos;ll get back to you within 1 business day.
+              <div className="mt-8 rounded-[24px] border border-[#d9ead8] bg-[#f2fbf2] px-6 py-8">
+                <h3 className="text-[28px] font-semibold text-[#173047]">Message sent.</h3>
+                <p className="mt-3 text-[15px] leading-7 text-[#536268]">
+                  Thanks. We will review it and reply within one business day.
                 </p>
                 <button
                   onClick={() => setStatus("idle")}
-                  className="mt-2 text-[13px] font-semibold text-[#e8460a] hover:underline"
+                  className="mt-5 rounded-full bg-[#173047] px-5 py-2.5 text-[14px] font-semibold text-white transition-colors hover:bg-[#102332]"
                 >
                   Send another message
                 </button>
               </div>
             ) : (
-              <form onSubmit={handleSubmit}>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+              <form onSubmit={handleSubmit} className="mt-8 space-y-5">
+                <div className="grid gap-5 sm:grid-cols-2">
                   {[
-                    { name: "first_name", label: "First Name", placeholder: "John", required: true },
-                    { name: "last_name", label: "Last Name", placeholder: "Smith", required: true },
-                  ].map((f) => (
-                    <div key={f.name}>
-                      <label className="block text-[13px] font-semibold text-[#1b3a5c] mb-1.5">
-                        {f.label} <span className="text-[#e8460a]">*</span>
+                    { name: "first_name", label: "First name", placeholder: "Alex" },
+                    { name: "last_name", label: "Last name", placeholder: "Babalola" },
+                  ].map((field) => (
+                    <div key={field.name}>
+                      <label className="mb-2 block text-[13px] font-semibold text-[#173047]">
+                        {field.label}
                       </label>
                       <input
                         type="text"
-                        name={f.name}
-                        placeholder={f.placeholder}
-                        required={f.required}
-                        className="w-full bg-[#f4f7fb] border border-[#dde4ed] rounded-lg px-4 py-3 text-[14px] text-[#1b3a5c] placeholder-[#b0bec9] focus:border-[#e8460a] focus:bg-white outline-none transition-colors"
+                        name={field.name}
+                        placeholder={field.placeholder}
+                        required
+                        className="w-full rounded-2xl border border-[#dfd7ca] bg-[#fcfbf8] px-4 py-3 text-[14px] text-[#173047] outline-none transition-colors focus:border-[#b85b20] focus:bg-white"
                       />
                     </div>
                   ))}
                 </div>
-                <div className="mb-4">
-                  <label className="block text-[13px] font-semibold text-[#1b3a5c] mb-1.5">
-                    Email Address <span className="text-[#e8460a]">*</span>
+
+                <div>
+                  <label className="mb-2 block text-[13px] font-semibold text-[#173047]">
+                    Email address
                   </label>
                   <input
                     type="email"
                     name="email"
-                    placeholder="john@company.com"
+                    placeholder="you@company.com"
                     required
-                    className="w-full bg-[#f4f7fb] border border-[#dde4ed] rounded-lg px-4 py-3 text-[14px] text-[#1b3a5c] placeholder-[#b0bec9] focus:border-[#e8460a] focus:bg-white outline-none transition-colors"
+                    className="w-full rounded-2xl border border-[#dfd7ca] bg-[#fcfbf8] px-4 py-3 text-[14px] text-[#173047] outline-none transition-colors focus:border-[#b85b20] focus:bg-white"
                   />
                 </div>
-                <div className="mb-4">
-                  <label className="block text-[13px] font-semibold text-[#1b3a5c] mb-1.5">
-                    I&apos;m reaching out about…
+
+                <div>
+                  <label className="mb-2 block text-[13px] font-semibold text-[#173047]">
+                    What is this about?
                   </label>
                   <select
                     name="inquiry_type"
-                    className="w-full bg-[#f4f7fb] border border-[#dde4ed] rounded-lg px-4 py-3 text-[14px] text-[#1b3a5c] focus:border-[#e8460a] focus:bg-white outline-none transition-colors"
+                    className="w-full rounded-2xl border border-[#dfd7ca] bg-[#fcfbf8] px-4 py-3 text-[14px] text-[#173047] outline-none transition-colors focus:border-[#b85b20] focus:bg-white"
                   >
-                    <option value="">Select a topic</option>
-                    <option value="partnership">I have an offer I want promoted</option>
-                    <option value="saas">SaaS affiliate program inquiry</option>
-                    <option value="partnerstack">PartnerStack partnership</option>
+                    <option value="">Choose one</option>
+                    <option value="affiliate_offer">Affiliate offer or product</option>
+                    <option value="saas_program">SaaS partner program</option>
+                    <option value="traffic_partnership">Traffic or partner opportunity</option>
                     <option value="general">General inquiry</option>
                   </select>
                 </div>
-                <div className="mb-6">
-                  <label className="block text-[13px] font-semibold text-[#1b3a5c] mb-1.5">
+
+                <div>
+                  <label className="mb-2 block text-[13px] font-semibold text-[#173047]">
                     Message
                   </label>
                   <textarea
                     name="message"
-                    rows={5}
-                    placeholder="Tell us about your offer, program, or question…"
-                    className="w-full bg-[#f4f7fb] border border-[#dde4ed] rounded-lg px-4 py-3 text-[14px] text-[#1b3a5c] placeholder-[#b0bec9] focus:border-[#e8460a] focus:bg-white outline-none transition-colors resize-y min-h-[110px]"
+                    rows={7}
+                    placeholder="Include the live URL, payout structure, target buyer, restrictions, and anything important about the funnel or attribution."
+                    required
+                    className="min-h-[180px] w-full resize-y rounded-2xl border border-[#dfd7ca] bg-[#fcfbf8] px-4 py-3 text-[14px] leading-7 text-[#173047] outline-none transition-colors focus:border-[#b85b20] focus:bg-white"
                   />
                 </div>
 
                 {status === "error" && (
-                  <p className="text-[13px] text-red-600 mb-4">
-                    Something went wrong. Please try again or email us directly at info@loriziallc.com.
+                  <p className="text-[13px] text-red-600">
+                    Something failed on submission. Try again or email
+                    info@loriziallc.com directly.
                   </p>
                 )}
 
                 <button
                   type="submit"
                   disabled={status === "submitting"}
-                  className="w-full bg-[#e8460a] hover:bg-[#c73a08] disabled:opacity-60 text-white py-3.5 rounded-lg font-bold text-[15px] transition-colors cursor-pointer"
+                  className="inline-flex rounded-full bg-[#b85b20] px-7 py-3.5 text-[15px] font-semibold text-white transition-colors hover:bg-[#9f4d18] disabled:cursor-not-allowed disabled:opacity-60"
                 >
-                  {status === "submitting" ? "Sending…" : "Send Message →"}
+                  {status === "submitting" ? "Sending..." : "Send inquiry"}
                 </button>
               </form>
             )}
           </div>
         </div>
-      </section>
-
-      {/* Want to work together CTA */}
-      <section className="py-16 px-6 bg-white">
-        <div className="max-w-[600px] mx-auto bg-[#1b3a5c] rounded-2xl p-10 text-center text-white">
-          <h3
-            className="text-2xl font-bold mb-3"
-            style={{ fontFamily: "var(--font-playfair), Georgia, serif" }}
-          >
-            Want to Work Together?
-          </h3>
-          <p className="text-[15px] text-blue-200 mb-7">
-            If you have an offer or program you want promoted with legitimate
-            paid traffic, we&apos;d love to hear from you. Fill out the form above
-            or reach out directly.
-          </p>
-          <a
-            href="mailto:info@loriziallc.com"
-            className="inline-block bg-[#e8460a] hover:bg-[#c73a08] text-white px-8 py-3.5 rounded-lg font-bold text-[15px] transition-colors"
-          >
-            Email Us Directly
-          </a>
-        </div>
-      </section>
-
+      </main>
       <Footer />
     </div>
   );

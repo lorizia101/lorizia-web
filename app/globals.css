@@ -1,6 +1,4 @@
 @import "tailwindcss";
-@import "tw-animate-css";
-@import "shadcn/tailwind.css";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -148,13 +146,38 @@
   }
   body {
     @apply bg-background text-foreground;
-    font-family: var(--font-inter), 'Segoe UI', Arial, sans-serif;
+    font-family: var(--font-manrope), 'Segoe UI', Arial, sans-serif;
+    background:
+      radial-gradient(circle at top left, rgba(198, 117, 42, 0.12), transparent 24%),
+      radial-gradient(circle at bottom right, rgba(24, 42, 58, 0.08), transparent 30%),
+      linear-gradient(180deg, #efe6da 0%, #f6f0e7 22%, #faf7f2 100%);
   }
   html {
     @apply font-sans;
     scroll-behavior: smooth;
   }
   h1, h2, h3 {
-    font-family: var(--font-playfair), Georgia, serif;
+    font-family: var(--font-cormorant), Georgia, serif;
+  }
+}
+
+@layer components {
+  .lorizia-shell {
+    @apply mx-auto w-full max-w-[1180px] px-6;
+  }
+
+  .lorizia-kicker {
+    @apply text-[11px] font-bold uppercase tracking-[0.28em] text-[#b45a17];
+  }
+
+  .lorizia-panel {
+    @apply rounded-[28px] border border-[#dfd7ca] bg-white/78 shadow-[0_18px_60px_rgba(22,34,34,0.08)] backdrop-blur;
+  }
+
+  .lorizia-gridline {
+    background-image:
+      linear-gradient(to right, rgba(33, 45, 56, 0.08) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(33, 45, 56, 0.08) 1px, transparent 1px);
+    background-size: 36px 36px;
   }
 }
