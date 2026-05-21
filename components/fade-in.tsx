@@ -1,6 +1,8 @@
 "use client";
 
-import { motion, useInView } from "framer-motion";
+import { motion, useInView, type Variants } from "framer-motion";
+
+const EASE = [0.21, 0.47, 0.32, 0.98] as const;
 import { useRef } from "react";
 
 interface FadeInProps {
@@ -33,7 +35,7 @@ export function FadeIn({
       ref={ref}
       initial={{ opacity: 0, ...dirMap[direction] }}
       animate={inView ? { opacity: 1, y: 0, x: 0 } : {}}
-      transition={{ duration, delay, ease: [0.21, 0.47, 0.32, 0.98] }}
+      transition={{ duration, delay, ease: EASE }}
       className={className}
     >
       {children}
@@ -67,11 +69,11 @@ export function StaggerChildren({ children, className = "", staggerDelay = 0.1 }
   );
 }
 
-export const fadeUpVariant = {
+export const fadeUpVariant: Variants = {
   hidden: { opacity: 0, y: 28 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.7, ease: [0.21, 0.47, 0.32, 0.98] },
+    transition: { duration: 0.7, ease: EASE },
   },
 };

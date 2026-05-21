@@ -1,7 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
+
+const EASE = [0.21, 0.47, 0.32, 0.98] as const;
 import {
   ArrowRight,
   BarChart3,
@@ -96,13 +98,13 @@ const tickerItems = [
 /* ── Hero (client, animated) ──────────────────────── */
 
 function HeroSection() {
-  const container = {
+  const container: Variants = {
     hidden: {},
     visible: { transition: { staggerChildren: 0.12, delayChildren: 0.1 } },
   };
-  const item = {
+  const item: Variants = {
     hidden: { opacity: 0, y: 36 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.21, 0.47, 0.32, 0.98] } },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: EASE } },
   };
 
   return (
@@ -167,7 +169,7 @@ function HeroSection() {
           <motion.div
             initial={{ opacity: 0, x: 40 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.9, delay: 0.35, ease: [0.21, 0.47, 0.32, 0.98] }}
+            transition={{ duration: 0.9, delay: 0.35, ease: EASE }}
             className="grid gap-4 sm:grid-cols-2"
           >
             {[
@@ -196,7 +198,7 @@ function HeroSection() {
                 key={card.kicker}
                 initial={{ opacity: 0, y: 24 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7, delay: 0.5 + i * 0.1, ease: [0.21, 0.47, 0.32, 0.98] }}
+                transition={{ duration: 0.7, delay: 0.5 + i * 0.1, ease: EASE }}
                 className="rounded-[24px] border border-white/8 bg-white/5 p-6 backdrop-blur-sm"
               >
                 <p className="text-[10px] font-bold uppercase tracking-[0.32em] text-[#e8a85a]">
