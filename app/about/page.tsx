@@ -1,7 +1,11 @@
+"use client";
+
 import Link from "next/link";
-import { Building2, Compass, LineChart, ShieldCheck } from "lucide-react";
+import { Building2, Compass, LineChart, ShieldCheck, ArrowRight } from "lucide-react";
+import { motion } from "framer-motion";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
+import { FadeIn, StaggerChildren, fadeUpVariant } from "@/components/fade-in";
 
 const principles = [
   {
@@ -26,102 +30,154 @@ const principles = [
   },
 ];
 
+const facts = [
+  ["Business", "Lorizia LLC"],
+  ["Base", "Houston, Texas"],
+  ["Primary market", "United States"],
+  ["Focus", "Paid search · Partner acquisition"],
+];
+
 export default function About() {
   return (
-    <div className="flex flex-1 flex-col">
+    <div className="flex min-h-full flex-col">
       <Nav />
-      <main className="px-6 py-12 md:py-18">
-        <div className="lorizia-shell grid gap-8 lg:grid-cols-[0.95fr_1.05fr]">
-          <div className="rounded-[30px] bg-[#173047] p-8 text-white md:p-10">
-            <span className="text-[12px] font-bold uppercase tracking-[0.24em] text-[#f2b161]">
-              About Lorizia
-            </span>
-            <h1 className="mt-4 text-5xl font-semibold leading-[0.96] md:text-6xl">
-              A performance marketing business built around cleaner acquisition decisions.
-            </h1>
-            <p className="mt-6 text-[17px] leading-8 text-[#cedae2]">
-              Lorizia LLC is a Houston-based company focused on paid search,
-              partner acquisition, landing-path quality, and reporting discipline.
-            </p>
-          </div>
 
-          <div className="lorizia-panel p-8 md:p-10">
-            <span className="lorizia-kicker">What we are</span>
-            <div className="mt-5 space-y-5 text-[16px] leading-8 text-[#506066]">
-              <p>
-                Lorizia is not trying to be a giant agency with a thousand service
-                lines. The business is structured around a smaller set of
-                acquisition problems where judgment matters: search intent, partner
-                fit, destination quality, and conversion visibility.
-              </p>
-              <p>
-                That means we spend more time on whether an offer can survive paid
-                traffic than on theater, vanity metrics, or clever wording trying to
-                rescue weak economics.
-              </p>
-              <p>
-                Our operating preference is simple: one clean path, one readable
-                system, and one evidence-based decision at a time.
-              </p>
+      <main className="flex-1">
+        {/* Page hero */}
+        <section className="bg-[#0d1c28] px-6 py-20 md:py-28">
+          <div className="lorizia-shell">
+            <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-end">
+              <FadeIn direction="up">
+                <span className="lorizia-kicker-light">About Lorizia</span>
+                <h1 className="mt-5 text-[clamp(2.6rem,6vw,6.5rem)] font-semibold leading-[0.9] text-white">
+                  A performance marketing business built around cleaner acquisition decisions.
+                </h1>
+                <p className="mt-7 max-w-xl text-[17px] leading-8 text-[#8fa5b5]">
+                  Lorizia LLC is a Houston-based company focused on paid search,
+                  partner acquisition, landing-path quality, and reporting discipline.
+                </p>
+              </FadeIn>
+
+              <FadeIn delay={0.15} direction="right">
+                <div className="rounded-[32px] border border-white/10 bg-white/5 p-8 md:p-10">
+                  <span className="lorizia-kicker-light">Company facts</span>
+                  <div className="mt-6 space-y-4">
+                    {facts.map(([label, value]) => (
+                      <div key={label} className="border-t border-white/8 pt-4 first:border-0 first:pt-0">
+                        <p className="text-[11px] font-bold uppercase tracking-[0.24em] text-[#6a8899]">
+                          {label}
+                        </p>
+                        <p className="mt-1.5 text-[17px] font-semibold text-white">{value}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </FadeIn>
             </div>
+          </div>
+        </section>
 
-            <div className="mt-8 grid gap-4 sm:grid-cols-2">
-              {[
-                ["Business", "Lorizia LLC"],
-                ["Base", "Houston, Texas"],
-                ["Primary market", "United States"],
-                ["Focus", "Paid search and partner acquisition"],
-              ].map(([label, value]) => (
-                <div key={label} className="rounded-2xl border border-[#e5dbcf] bg-[#fcfbf8] px-5 py-4">
-                  <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-[#8e6d51]">
-                    {label}
+        {/* What we are */}
+        <section className="px-6 py-20 md:py-28">
+          <div className="lorizia-shell">
+            <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+              <FadeIn direction="left" className="lg:sticky lg:top-28">
+                <span className="lorizia-kicker">What we are</span>
+                <h2 className="mt-4 text-[clamp(2rem,4vw,4rem)] font-semibold leading-[0.94] text-[#0d1c28]">
+                  Intentionally focused on the problems that matter most.
+                </h2>
+              </FadeIn>
+
+              <FadeIn delay={0.1} direction="right">
+                <div className="space-y-6 text-[16px] leading-8 text-[#4a5c66]">
+                  <p>
+                    Lorizia is not trying to be a giant agency with a thousand service
+                    lines. The business is structured around a smaller set of
+                    acquisition problems where judgment matters: search intent, partner
+                    fit, destination quality, and conversion visibility.
                   </p>
-                  <p className="mt-2 text-[16px] font-semibold text-[#173047]">{value}</p>
+                  <p>
+                    That means we spend more time on whether an offer can survive paid
+                    traffic than on theater, vanity metrics, or clever wording trying to
+                    rescue weak economics.
+                  </p>
+                  <p>
+                    Our operating preference is simple: one clean path, one readable
+                    system, and one evidence-based decision at a time.
+                  </p>
                 </div>
-              ))}
+              </FadeIn>
             </div>
           </div>
-        </div>
+        </section>
 
-        <div className="lorizia-shell mt-10 grid gap-5 md:grid-cols-2">
-          {principles.map(({ icon: Icon, title, body }) => (
-            <div key={title} className="lorizia-panel p-7">
-              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#efe4d5] text-[#b85b20]">
-                <Icon className="h-5 w-5" />
+        {/* Principles */}
+        <section className="bg-[#f0e8dc] px-6 py-20 md:py-28">
+          <div className="lorizia-shell">
+            <FadeIn>
+              <span className="lorizia-kicker">Operating principles</span>
+              <h2 className="mt-4 max-w-2xl text-[clamp(2rem,4vw,4rem)] font-semibold leading-[0.94] text-[#0d1c28]">
+                Four ideas that shape how decisions get made.
+              </h2>
+            </FadeIn>
+
+            <StaggerChildren className="mt-12 grid gap-5 sm:grid-cols-2" staggerDelay={0.09}>
+              {principles.map(({ icon: Icon, title, body }) => (
+                <motion.div
+                  key={title}
+                  variants={fadeUpVariant}
+                  className="rounded-[28px] border border-[#ddd5c8] bg-white p-8"
+                >
+                  <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-[#f0e8dc] text-[#c8622a]">
+                    <Icon className="h-5 w-5" />
+                  </div>
+                  <h3 className="mt-5 text-[24px] font-semibold text-[#0d1c28]">{title}</h3>
+                  <p className="mt-3 text-[15px] leading-7 text-[#5a6e78]">{body}</p>
+                </motion.div>
+              ))}
+            </StaggerChildren>
+          </div>
+        </section>
+
+        {/* Best fit */}
+        <section className="px-6 py-20 md:py-28">
+          <div className="lorizia-shell">
+            <FadeIn>
+              <div className="rounded-[36px] border border-[#ddd5c8] bg-white p-8 md:p-12">
+                <span className="lorizia-kicker">Who we are best for</span>
+                <h2 className="mt-4 max-w-3xl text-[clamp(2rem,4vw,4rem)] font-semibold leading-[0.94] text-[#0d1c28]">
+                  Businesses that want disciplined growth, not noise.
+                </h2>
+
+                <div className="mt-8 grid gap-4 sm:grid-cols-2">
+                  {[
+                    "Offer owners who want legitimate paid acquisition, not junk traffic.",
+                    "SaaS programs that need an affiliate partner who understands conversion quality.",
+                    "Operators who care about what the numbers actually mean.",
+                    "Teams willing to qualify the opportunity before forcing scale.",
+                  ].map((item) => (
+                    <div
+                      key={item}
+                      className="flex items-start gap-3 rounded-2xl border border-[#e8e0d6] bg-[#f7f2eb] px-6 py-5 text-[15px] leading-7 text-[#4a5c66]"
+                    >
+                      <div className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#c8622a]" />
+                      {item}
+                    </div>
+                  ))}
+                </div>
+
+                <div className="mt-8">
+                  <Link href="/contact" className="btn-primary inline-flex">
+                    Start the conversation
+                    <ArrowRight className="h-4 w-4" />
+                  </Link>
+                </div>
               </div>
-              <h2 className="mt-5 text-[28px] font-semibold text-[#173047]">{title}</h2>
-              <p className="mt-3 text-[15px] leading-7 text-[#5b696f]">{body}</p>
-            </div>
-          ))}
-        </div>
-
-        <div className="lorizia-shell mt-10">
-          <div className="rounded-[30px] border border-[#e1d6c8] bg-[#f7f2ea] px-8 py-10 md:px-10">
-            <span className="lorizia-kicker">Who we are best for</span>
-            <h2 className="mt-4 text-4xl font-semibold text-[#173047] md:text-5xl">
-              Businesses that want disciplined growth, not noise.
-            </h2>
-            <div className="mt-6 grid gap-4 md:grid-cols-2">
-              {[
-                "Offer owners who want legitimate paid acquisition, not junk traffic.",
-                "SaaS programs that need an affiliate partner who understands conversion quality.",
-                "Operators who care about what the numbers actually mean.",
-                "Teams willing to qualify the opportunity before forcing scale.",
-              ].map((item) => (
-                <div key={item} className="rounded-2xl bg-white px-5 py-4 text-[15px] leading-7 text-[#4f5d63] shadow-sm">
-                  {item}
-                </div>
-              ))}
-            </div>
-            <Link
-              href="/contact"
-              className="mt-8 inline-flex rounded-full bg-[#173047] px-6 py-3 text-[15px] font-semibold text-white transition-colors hover:bg-[#102332]"
-            >
-              Start the conversation
-            </Link>
+            </FadeIn>
           </div>
-        </div>
+        </section>
       </main>
+
       <Footer />
     </div>
   );

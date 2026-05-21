@@ -1,63 +1,71 @@
 "use client";
+
 import Link from "next/link";
-import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import { LoriziaLogo } from "@/components/logo";
 
 const links = [
-  { href: "/services", label: "Services" },
-  { href: "/about", label: "About" },
+  { href: "/services",     label: "Services" },
+  { href: "/about",        label: "About" },
   { href: "/partnerships", label: "Partnerships" },
 ];
 
 export function Nav() {
   const pathname = usePathname();
-  const [open, setOpen] = useState(false);
+  const [open, setOpen]         = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handler = () => setScrolled(window.scrollY > 12);
+    window.addEventListener("scroll", handler, { passive: true });
+    return () => window.removeEventListener("scroll", handler);
+  }, []);
 
   return (
-    <nav className="sticky top-0 z-50 border-b border-[#dfd7ca] bg-[#fbfaf7]/90 backdrop-blur">
-      <div className="lorizia-shell flex h-[76px] items-center justify-between">
-        <Link href="/" className="flex items-center gap-2 shrink-0">
-          <div className="rounded-2xl border border-[#203447]/12 bg-[#173047] px-3 py-2 shadow-sm">
-            <Image
-              src="/lorizia-logo.png"
-              alt="Lorizia LLC"
-              width={160}
-              height={50}
-              className="h-8 w-auto object-contain"
-              priority
-            />
-          </div>
+    <nav
+      className={`sticky top-0 z-50 transition-all duration-300 ${
+        scrolled
+          ? "border-b border-[#ddd5c8] bg-[#f7f2eb]/92 shadow-[0_2px_16px_rgba(13,28,40,0.07)] backdrop-blur-md"
+          : "border-b border-transparent bg-transparent"
+      }`}
+    >
+      <div className="lorizia-shell flex h-[72px] items-center justify-between">
+        {/* Logo */}
+        <Link href="/" className="flex items-center shrink-0">
+          <LoriziaLogo className="h-11 w-auto" variant="dark" />
         </Link>
 
-        <ul className="hidden md:flex items-center gap-8 list-none">
+        {/* Desktop nav */}
+        <ul className="hidden md:flex items-center gap-1 list-none">
           {links.map((l) => (
             <li key={l.href}>
               <Link
                 href={l.href}
-                className={`text-[15px] font-medium transition-colors ${
+                className={`relative px-4 py-2 text-[14px] font-medium transition-colors rounded-full ${
                   pathname === l.href
-                    ? "text-[#173047] font-semibold"
-                    : "text-[#5f6d72] hover:text-[#173047]"
+                    ? "text-[#0d1c28] font-semibold bg-[#0d1c28]/6"
+                    : "text-[#6b7f8a] hover:text-[#0d1c28] hover:bg-[#0d1c28]/4"
                 }`}
               >
                 {l.label}
               </Link>
             </li>
           ))}
-          <li>
+          <li className="ml-3">
             <Link
               href="/contact"
-              className="rounded-full bg-[#b85b20] px-5 py-2.5 text-[15px] font-semibold text-white transition-colors hover:bg-[#9f4d18]"
+              className="btn-primary py-2.5 text-[14px]"
             >
               Partner With Lorizia
             </Link>
           </li>
         </ul>
 
+        {/* Mobile hamburger */}
         <button
-          className="rounded-xl border border-[#dfd7ca] bg-white p-2 text-[#173047] md:hidden"
+          className="flex items-center justify-center rounded-xl border border-[#ddd5c8] bg-white/80 p-2 text-[#0d1c28] md:hidden"
           onClick={() => setOpen(!open)}
           aria-label="Toggle menu"
         >
@@ -65,25 +73,34 @@ export function Nav() {
         </button>
       </div>
 
+      {/* Mobile menu */}
       {open && (
-        <div className="border-t border-[#dfd7ca] bg-[#fbfaf7] md:hidden">
-          {links.map((l) => (
-            <Link
-              key={l.href}
-              href={l.href}
-              onClick={() => setOpen(false)}
-              className="block border-b border-[#e7e0d6] px-6 py-3.5 text-[15px] font-medium text-[#173047] hover:bg-white"
-            >
-              {l.label}
-            </Link>
-          ))}
-          <Link
-            href="/contact"
-            onClick={() => setOpen(false)}
-            className="block px-6 py-3.5 text-[15px] font-semibold text-[#b85b20] hover:bg-white"
-          >
-            Partner With Lorizia
-          </Link>
+        <div className="border-t border-[#ddd5c8] bg-[#f7f2eb] md:hidden">
+          <div className="lorizia-shell py-4 space-y-1">
+            {links.map((l) => (
+              <Link
+                key={l.href}
+                href={l.href}
+                onClick={() => setOpen(false)}
+                className={`block rounded-xl px-4 py-3 text-[15px] font-medium transition-colors ${
+                  pathname === l.href
+                    ? "bg-[#0d1c28]/8 text-[#0d1c28] font-semibold"
+                    : "text-[#4a5c66] hover:bg-[#0d1c28]/4 hover:text-[#0d1c28]"
+                }`}
+              >
+                {l.label}
+              </Link>
+            ))}
+            <div className="pt-2">
+              <Link
+                href="/contact"
+                onClick={() => setOpen(false)}
+                className="btn-primary w-full justify-center"
+              >
+                Partner With Lorizia
+              </Link>
+            </div>
+          </div>
         </div>
       )}
     </nav>

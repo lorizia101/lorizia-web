@@ -15,39 +15,27 @@
   --color-sidebar-primary: var(--sidebar-primary);
   --color-sidebar-foreground: var(--sidebar-foreground);
   --color-sidebar: var(--sidebar);
-  --color-chart-5: var(--chart-5);
-  --color-chart-4: var(--chart-4);
-  --color-chart-3: var(--chart-3);
-  --color-chart-2: var(--chart-2);
-  --color-chart-1: var(--chart-1);
-  --color-ring: var(--ring);
-  --color-input: var(--input);
-  --color-border: var(--border);
-  --color-destructive: var(--destructive);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-accent: var(--accent);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-muted: var(--muted);
-  --color-secondary-foreground: var(--secondary-foreground);
-  --color-secondary: var(--secondary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-primary: var(--primary);
-  --color-popover-foreground: var(--popover-foreground);
-  --color-popover: var(--popover);
-  --color-card-foreground: var(--card-foreground);
-  --color-card: var(--card);
-  --radius-sm: calc(var(--radius) * 0.6);
-  --radius-md: calc(var(--radius) * 0.8);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) * 1.4);
-  --radius-2xl: calc(var(--radius) * 1.8);
-  --radius-3xl: calc(var(--radius) * 2.2);
-  --radius-4xl: calc(var(--radius) * 2.6);
+
+  --animate-aurora: aurora 60s linear infinite;
+  --animate-marquee: marquee 32s linear infinite;
+  --animate-marquee-reverse: marquee 32s linear infinite reverse;
 }
 
 :root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
+  /* ── Lorizia brand tokens ── */
+  --lorizia-navy:      #0d1c28;
+  --lorizia-navy-mid:  #1a3347;
+  --lorizia-orange:    #c8622a;
+  --lorizia-orange-lt: #e8845a;
+  --lorizia-gold:      #e8a85a;
+  --lorizia-cream:     #f7f2eb;
+  --lorizia-sand:      #ede4d8;
+  --lorizia-border:    #ddd5c8;
+  --lorizia-muted:     #8a9da8;
+  --lorizia-text:      #1a2a35;
+
+  --background: oklch(0.98 0.005 80);
+  --foreground: oklch(0.14 0.02 240);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
@@ -61,14 +49,9 @@
   --accent: oklch(0.97 0 0);
   --accent-foreground: oklch(0.205 0 0);
   --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
+  --border: oklch(0.9 0.01 80);
   --input: oklch(0.922 0 0);
   --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.809 0.105 251.813);
-  --chart-2: oklch(0.623 0.214 259.815);
-  --chart-3: oklch(0.546 0.245 262.881);
-  --chart-4: oklch(0.488 0.243 264.376);
-  --chart-5: oklch(0.424 0.199 265.638);
   --radius: 0.625rem;
   --sidebar: oklch(0.985 0 0);
   --sidebar-foreground: oklch(0.145 0 0);
@@ -78,106 +61,136 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
-}
 
-.dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.809 0.105 251.813);
-  --chart-2: oklch(0.623 0.214 259.815);
-  --chart-3: oklch(0.546 0.245 262.881);
-  --chart-4: oklch(0.488 0.243 264.376);
-  --chart-5: oklch(0.424 0.199 265.638);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
-}
-
-/* ── Lorizia brand tokens ── */
-:root {
-  --lorizia-navy:   #1b3a5c;
-  --lorizia-navy2:  #122840;
-  --lorizia-orange: #e8460a;
-  --lorizia-yellow: #f5c842;
-  --lorizia-light:  #f4f7fb;
-  --lorizia-border: #dde4ed;
-  --lorizia-gray:   #64748b;
-
-  /* aurora CSS vars */
   --white: #ffffff;
   --black: #000000;
   --transparent: transparent;
 }
 
-/* ── Aurora animation ── */
-@theme inline {
-  --animate-aurora: aurora 60s linear infinite;
-}
-
+/* ── Keyframes ── */
 @keyframes aurora {
   from { background-position: 50% 50%, 50% 50%; }
   to   { background-position: 350% 50%, 350% 50%; }
 }
 
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
 @layer base {
   * {
-    @apply border-border outline-ring/50;
+    box-sizing: border-box;
+    border-color: var(--border);
   }
-  body {
-    @apply bg-background text-foreground;
-    font-family: var(--font-manrope), 'Segoe UI', Arial, sans-serif;
-    background:
-      radial-gradient(circle at top left, rgba(198, 117, 42, 0.12), transparent 24%),
-      radial-gradient(circle at bottom right, rgba(24, 42, 58, 0.08), transparent 30%),
-      linear-gradient(180deg, #efe6da 0%, #f6f0e7 22%, #faf7f2 100%);
-  }
+
   html {
-    @apply font-sans;
     scroll-behavior: smooth;
+    font-family: var(--font-manrope), 'Segoe UI', Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
-  h1, h2, h3 {
+
+  body {
+    background-color: #f7f2eb;
+    color: #1a2a35;
+  }
+
+  h1, h2, h3, h4 {
     font-family: var(--font-cormorant), Georgia, serif;
+    font-feature-settings: "kern" 1, "liga" 1;
   }
 }
 
 @layer components {
+  /* Layout */
   .lorizia-shell {
-    @apply mx-auto w-full max-w-[1180px] px-6;
+    @apply mx-auto w-full max-w-[1200px] px-6;
   }
 
+  /* Typography */
   .lorizia-kicker {
-    @apply text-[11px] font-bold uppercase tracking-[0.28em] text-[#b45a17];
+    @apply text-[11px] font-bold uppercase tracking-[0.32em] text-[#c8622a];
+    font-family: var(--font-manrope), sans-serif;
   }
 
+  .lorizia-kicker-light {
+    @apply text-[11px] font-bold uppercase tracking-[0.32em] text-[#e8a85a];
+    font-family: var(--font-manrope), sans-serif;
+  }
+
+  /* Cards */
   .lorizia-panel {
-    @apply rounded-[28px] border border-[#dfd7ca] bg-white/78 shadow-[0_18px_60px_rgba(22,34,34,0.08)] backdrop-blur;
+    @apply rounded-[32px] border border-[#ddd5c8] bg-white shadow-[0_2px_24px_rgba(22,34,44,0.07)];
   }
 
-  .lorizia-gridline {
+  .lorizia-panel-dark {
+    @apply rounded-[32px] bg-[#0d1c28] text-white;
+  }
+
+  /* Grid overlay texture */
+  .lorizia-grid {
     background-image:
-      linear-gradient(to right, rgba(33, 45, 56, 0.08) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(33, 45, 56, 0.08) 1px, transparent 1px);
-    background-size: 36px 36px;
+      linear-gradient(to right, rgba(255,255,255,0.06) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255,255,255,0.06) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  .lorizia-grid-light {
+    background-image:
+      linear-gradient(to right, rgba(20,35,50,0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(20,35,50,0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  /* Marquee */
+  .lorizia-marquee {
+    display: flex;
+    width: max-content;
+    animation: marquee 36s linear infinite;
+    will-change: transform;
+  }
+
+  /* Buttons */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-[#c8622a] px-7 py-3.5 text-[15px] font-semibold text-white transition-all hover:bg-[#b05522] hover:shadow-[0_8px_24px_rgba(200,98,42,0.35)] active:scale-[0.98];
+    font-family: var(--font-manrope), sans-serif;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-[#ddd5c8] bg-white px-7 py-3.5 text-[15px] font-semibold text-[#1a2a35] transition-all hover:border-[#c8622a] hover:text-[#c8622a] active:scale-[0.98];
+    font-family: var(--font-manrope), sans-serif;
+  }
+
+  .btn-ghost-light {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-white/20 px-7 py-3.5 text-[15px] font-semibold text-white transition-all hover:bg-white/10 active:scale-[0.98];
+    font-family: var(--font-manrope), sans-serif;
+  }
+
+  /* Form inputs */
+  .lorizia-input {
+    @apply w-full rounded-2xl border border-[#ddd5c8] bg-white px-5 py-3.5 text-[15px] text-[#1a2a35] outline-none transition-all placeholder:text-[#b0bec5] focus:border-[#c8622a] focus:ring-2 focus:ring-[#c8622a]/10;
+    font-family: var(--font-manrope), sans-serif;
+  }
+
+  /* Divider */
+  .lorizia-rule {
+    @apply border-t border-[#ddd5c8];
+  }
+
+  /* Number label */
+  .lorizia-numeral {
+    font-family: var(--font-cormorant), Georgia, serif;
+    @apply text-[80px] font-semibold leading-none text-[#c8622a] md:text-[110px];
   }
 }
