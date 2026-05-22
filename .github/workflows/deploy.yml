@@ -1,0 +1,46 @@
+name: Build & Deploy to Hostinger
+
+on:
+  push:
+    branches:
+      - main          # deploy whenever you push to main
+  workflow_dispatch:  # also lets you trigger manually from GitHub UI
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Check out the repo
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # 2. Set up Node (matches the version your project needs)
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: "npm"
+
+      # 3. Install dependencies
+      - name: Install dependencies
+        run: npm ci
+
+      # 4. Build the static export → produces the `out/` folder
+      - name: Build
+        run: npm run build
+
+      # 5. Upload `out/` to Hostinger via FTP
+      - name: Deploy to Hostinger via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./out/          # Next.js static export output
+          server-dir: /public_html/  # Hostinger root — adjust if needed
+          dangerous-clean-slate: false
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**

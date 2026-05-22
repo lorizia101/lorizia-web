@@ -31,6 +31,9 @@ export function Footer() {
                 { href: "/about",       label: "About" },
                 { href: "/partnerships",label: "Partnerships" },
                 { href: "/contact",     label: "Contact" },
+                { href: "/media-kit",   label: "Media Kit" },
+                { href: "/socials",     label: "Socials" },
+                { href: "/terms",       label: "Terms" },
               ].map((l) => (
                 <Link
                   key={l.href}

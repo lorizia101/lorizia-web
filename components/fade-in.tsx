@@ -1,9 +1,9 @@
 "use client";
 
 import { motion, useInView, type Variants } from "framer-motion";
-
-const EASE = [0.21, 0.47, 0.32, 0.98] as const;
 import { useRef } from "react";
+
+const EASE: [number, number, number, number] = [0.21, 0.47, 0.32, 0.98];
 
 interface FadeInProps {
   children: React.ReactNode;
