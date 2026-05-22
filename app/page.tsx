@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { motion, type Variants } from "framer-motion";
 
-const EASE = [0.21, 0.47, 0.32, 0.98] as const;
 import {
   ArrowRight,
   BarChart3,
