@@ -17,6 +17,12 @@ export const metadata: Metadata = {
   title: "Lorizia LLC | Performance Marketing Partnerships",
   description:
     "Lorizia LLC is a Houston-based performance marketing company focused on paid search, partner acquisition, compliant landing paths, and measurable growth systems.",
+  icons: {
+    icon: [
+      { url: "/icon.svg", type: "image/svg+xml" },
+    ],
+    apple: "/icon.svg",
+  },
 };
 
 export default function RootLayout({
