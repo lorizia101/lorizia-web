@@ -28,6 +28,7 @@ export function Footer() {
               {[
                 { href: "/",            label: "Home" },
                 { href: "/services",    label: "Services" },
+                { href: "/resources",   label: "Resources" },
                 { href: "/about",       label: "About" },
                 { href: "/partnerships",label: "Partnerships" },
                 { href: "/contact",     label: "Contact" },

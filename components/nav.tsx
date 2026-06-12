@@ -8,6 +8,7 @@ import { LoriziaLogo } from "@/components/logo";
 
 const links = [
   { href: "/services",     label: "Services" },
+  { href: "/resources",    label: "Resources" },
   { href: "/about",        label: "About" },
   { href: "/partnerships", label: "Partnerships" },
 ];
