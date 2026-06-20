@@ -80,8 +80,8 @@ export default function ResourcesPage() {
             <FadeIn className="mt-12 rounded-[30px] border border-[#ddd5c8] bg-[#f0e8dc] p-8">
               <span className="lorizia-kicker">Next in queue</span>
               <p className="mt-4 max-w-2xl text-[16px] leading-8 text-[#4b5d68]">
-                The next wave is already lined up: <strong>HubSpot vs Pipedrive</strong>,
-                <strong> Kit vs Mailchimp</strong>, and the first SEO-tool comparison page.
+                The next wave is already lined up: <strong>the first SEO-tool comparison</strong>,
+                supporting internal-link upgrades, and partner-link insertion as approvals come in.
               </p>
             </FadeIn>
           </div>

@@ -264,6 +264,218 @@ export const resourceArticles: ResourceArticle[] = [
     applicationNote:
       "This page is the first public proof asset for a truthful Kit affiliate application once the live URL is indexed.",
   },
+  {
+    slug: "hubspot-vs-pipedrive",
+    category: "Comparison",
+    title: "HubSpot vs Pipedrive for Small Business in 2026",
+    description:
+      "A practical comparison of HubSpot vs Pipedrive for small businesses deciding between a broader CRM platform and a pipeline-first sales tool.",
+    intro:
+      "If a small business already knows it needs a CRM, the real decision is not whether to use one. It is whether to choose the broader platform path or the sharper pipeline path. HubSpot and Pipedrive are both credible options, but they solve slightly different problems for growing operators.",
+    quickAnswer:
+      "Choose HubSpot if you want a stronger free starting point and room to grow into sales, marketing, and service workflows. Choose Pipedrive if your main need is a clean, sales-first pipeline system with a more focused operating model.",
+    primaryOffer: "HubSpot",
+    publishedLabel: "June 13, 2026",
+    readTime: "8 min read",
+    table: [
+      {
+        name: "HubSpot",
+        bestFor: "Growing small businesses that want a broader platform",
+        standout:
+          "HubSpot's current small-business CRM positioning emphasizes a free-forever entry point, unlimited users at no cost, and room to expand into a larger customer platform.",
+        drawback:
+          "The cost picture can change materially once the business grows into paid hubs and higher limits.",
+      },
+      {
+        name: "Pipedrive",
+        bestFor: "Sales-focused teams that want pipeline clarity first",
+        standout:
+          "Pipedrive's current positioning is built around easy-to-use sales CRM and pipeline management, with a 14-day free trial and a simple workspace for leads, deals, and contacts.",
+        drawback:
+          "It is narrower than HubSpot if the business later wants one system spanning sales, marketing, and service workflows.",
+      },
+    ],
+    sections: [
+      {
+        title: "Why HubSpot is the better all-around platform",
+        paragraphs: [
+          "HubSpot is the stronger choice when the business wants more than a deal board. Its small-business CRM messaging is built around a free-forever starting point, unlimited users, and a believable path into a broader operating system for customer acquisition and follow-up.",
+          "That matters for founder-led teams that do not want to outgrow the first system too quickly. If the CRM is likely to become the center of sales, marketing coordination, and customer visibility, HubSpot is easier to justify as the default recommendation.",
+        ],
+        bullets: [
+          "Best for small businesses that want one central customer system",
+          "Strong fit when free entry and future expansion both matter",
+          "Safer choice for teams that may later need marketing or service workflows",
+        ],
+      },
+      {
+        title: "When Pipedrive is the smarter choice",
+        paragraphs: [
+          "Pipedrive becomes the better answer when the core pain is pipeline management, not platform breadth. Its positioning stays tightly focused on sales CRM, pipeline visibility, and a workspace built to help teams move deals forward without extra sprawl.",
+          "That can be the right call for smaller sales-heavy businesses that want quick adoption and less conceptual overhead. If the team mainly wants clearer deal stages, better follow-up discipline, and fewer distractions, Pipedrive often feels sharper.",
+        ],
+        bullets: [
+          "Best for sales-led teams where pipeline control is the immediate bottleneck",
+          "Useful when simplicity matters more than broader platform depth",
+          "Good fit for operators who want a direct paid CRM decision after the trial",
+        ],
+      },
+      {
+        title: "Pricing and upgrade path tradeoffs",
+        paragraphs: [
+          "HubSpot's entry advantage is obvious: it publicly frames the CRM as free forever for the core starting layer. That reduces adoption friction for small businesses that want structure before they are ready for a bigger software commitment.",
+          "Pipedrive's public pricing takes a different path. It emphasizes a 14-day free trial and then paid plans, starting with Lite. That makes it simpler to evaluate as a dedicated sales tool, but it also means there is less of a free on-ramp for teams that want to move slowly.",
+        ],
+        bullets: [
+          "HubSpot wins on low-friction entry",
+          "Pipedrive is easier to think about as a focused paid CRM",
+          "HubSpot can become more expensive later if multiple paid hubs enter the mix",
+        ],
+      },
+      {
+        title: "Final recommendation",
+        paragraphs: [
+          "For most small businesses, HubSpot is the better long-term recommendation because it gives a stronger free starting point and more room to mature into a broader customer platform.",
+          "Pipedrive is still the better answer when the business is fundamentally sales-led and wants the cleanest possible pipeline-first CRM. If you need one default answer, choose HubSpot. If you need the clearest sales workflow, choose Pipedrive.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Is HubSpot better than Pipedrive for small business?",
+        answer:
+          "Usually yes if the business wants a broader CRM foundation and room to expand into marketing or service workflows. Pipedrive is better when the main need is pipeline clarity and focused sales execution.",
+      },
+      {
+        question: "Does HubSpot still have a free CRM?",
+        answer:
+          "Yes. HubSpot currently promotes a free-forever CRM starting point for small businesses, with unlimited users and core CRM features.",
+      },
+      {
+        question: "Does Pipedrive offer a free plan?",
+        answer:
+          "Pipedrive currently emphasizes a 14-day free trial and then paid plans, rather than a permanent free CRM tier.",
+      },
+      {
+        question: "Who should choose Pipedrive instead of HubSpot?",
+        answer:
+          "Teams whose biggest problem is sales pipeline visibility and follow-up discipline, and who do not need a broader all-in-one platform, should consider Pipedrive first.",
+      },
+    ],
+    sourceNotes: [
+      "HubSpot official CRM and small-business CRM pages",
+      "Pipedrive official homepage and pricing pages",
+      "Last fact-check pass: June 13, 2026",
+    ],
+    applicationNote:
+      "This comparison page strengthens the HubSpot proof set and gives the site a clearer software-comparison footprint before second-wave affiliate applications.",
+  },
+  {
+    slug: "kit-vs-mailchimp",
+    category: "Comparison",
+    title: "Kit vs Mailchimp for Creators in 2026",
+    description:
+      "A practical comparison of Kit vs Mailchimp for creators choosing between a creator-first platform and a more traditional email-marketing stack.",
+    intro:
+      "For creators, the decision between Kit and Mailchimp is not really about which tool is more famous. It is about which platform matches the business model behind the newsletter. One is built around creators and audience ownership. The other is stronger in classic marketing-email infrastructure.",
+    quickAnswer:
+      "Choose Kit if you are building a creator-led audience business and want a platform designed around newsletters, growth, and monetization. Choose Mailchimp if you want a more traditional email-marketing stack with familiar templates, automations, and general-purpose campaign tooling.",
+    primaryOffer: "Kit",
+    publishedLabel: "June 13, 2026",
+    readTime: "8 min read",
+    table: [
+      {
+        name: "Kit",
+        bestFor: "Creators and audience-first newsletter businesses",
+        standout:
+          "Kit positions itself as the creator-first email marketing and newsletter platform, with emphasis on list growth, high-value subscribers, recommendations, and the Creator Profile.",
+        drawback:
+          "It is less aligned with traditional corporate-style email marketing workflows than Mailchimp.",
+      },
+      {
+        name: "Mailchimp",
+        bestFor: "Traditional email marketing teams and familiar campaign workflows",
+        standout:
+          "Mailchimp still offers broad marketing-email tooling, including templates, automations, analytics, and a free trial path for its Standard plan.",
+        drawback:
+          "It is less creator-native and can feel less aligned with newsletter-led audience businesses built around direct ownership and monetization.",
+      },
+    ],
+    sections: [
+      {
+        title: "Why Kit fits creators better",
+        paragraphs: [
+          "Kit's current positioning is unusually direct: it is a creator-first platform meant to help users grow their list, identify high-value subscribers, and earn more from every send. That maps well to creators building an owned audience instead of running generic business email campaigns.",
+          "Its Creator Profile and recommendations features reinforce that orientation. The product is designed around newsletters as part of the business itself, not just as one small function inside a larger marketing stack.",
+        ],
+        bullets: [
+          "Best for creators, educators, and audience-led operators",
+          "Strong fit for newsletter growth and monetization alignment",
+          "Useful when the email list is a strategic business asset, not just a campaign channel",
+        ],
+      },
+      {
+        title: "Where Mailchimp still has a real case",
+        paragraphs: [
+          "Mailchimp remains a serious option when the workflow looks more like classic business email marketing. Its public product pages still lean into templates, automation, analytics, signup forms, and broader campaign infrastructure for general-purpose marketing teams.",
+          "That means it can still be the right answer for businesses that care more about familiar marketing operations than creator-native product design. The issue is not capability. The issue is fit for the creator lane.",
+        ],
+        bullets: [
+          "Best for traditional marketing workflows",
+          "Helpful when team familiarity and established campaign patterns matter most",
+          "More natural for classic business-email operations than audience-first creator businesses",
+        ],
+      },
+      {
+        title: "Growth and pricing pressure",
+        paragraphs: [
+          "Both tools have pricing considerations, but creators often make the mistake of treating entry cost as the only decision rule. A platform that is cheaper on paper can still be more expensive in practice if it slows audience growth or monetization.",
+          "Kit's product framing is built around creator outcomes, while Mailchimp's pricing and free-trial messaging fit a more general email-marketing path. That makes the right question less about headline price and more about whether the software supports the business model you are actually building.",
+        ],
+        bullets: [
+          "Do not judge solely by the first visible monthly price",
+          "Choose the platform that best supports the intended audience and revenue model",
+          "Mailchimp is broader for traditional marketing, while Kit is tighter for creator-led growth",
+        ],
+      },
+      {
+        title: "Final recommendation",
+        paragraphs: [
+          "For creators, Kit is the better default recommendation because it is more closely aligned with newsletter-led audience businesses, monetization goals, and direct audience ownership.",
+          "Mailchimp still makes sense for a more traditional marketing setup. But if the question is specifically about creators, Kit is the more natural fit unless there is already a strong reason to stay in the Mailchimp style of workflow.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Is Kit better than Mailchimp for creators?",
+        answer:
+          "Yes, in most creator-focused cases. Kit is more directly aligned with newsletters, audience ownership, and creator monetization than Mailchimp's broader traditional marketing stack.",
+      },
+      {
+        question: "What is Kit's Creator Profile?",
+        answer:
+          "Kit describes Creator Profile as a public newsletter page where readers can explore posts, discover content, and subscribe, which makes it more creator-native than a standard email-only workflow.",
+      },
+      {
+        question: "Is Mailchimp still good for email marketing?",
+        answer:
+          "Yes. Mailchimp remains a capable platform for templates, automations, analytics, and general business email-marketing operations.",
+      },
+      {
+        question: "How should creators choose between Kit and Mailchimp?",
+        answer:
+          "Creators should choose based on business model fit. If the goal is an owned audience and newsletter-led growth, Kit is the better fit. If the workflow is more traditional marketing-email operations, Mailchimp has a stronger case.",
+      },
+    ],
+    sourceNotes: [
+      "Kit official homepage, newsletter creators page, and Creator Profile resources",
+      "Mailchimp official homepage, pricing, templates, and automation resources",
+      "Last fact-check pass: June 13, 2026",
+    ],
+    applicationNote:
+      "This comparison page strengthens the Kit proof set and makes the creator-email lane look more intentional to affiliate reviewers.",
+  },
 ];
 
 export function getResourceBySlug(slug: string) {
